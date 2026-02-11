@@ -161,6 +161,21 @@ class MetricsTensorBoardSink:
             if ar50_90 is not None:
                 self.writer.add_scalar("Metrics/Base/AR50_90", ar50_90, epoch)
 
+        if 'test_results_json' in values:
+            rj = values['test_results_json']
+            self.writer.add_scalar("Metrics/Base/F1", rj['f1_score'], epoch)
+            self.writer.add_scalar("Metrics/Base/Precision", rj['precision'], epoch)
+            self.writer.add_scalar("Metrics/Base/Recall", rj['recall'], epoch)
+            for entry in rj['class_map']:
+                if entry['class'] == 'all':
+                    continue
+                cls = entry['class']
+                self.writer.add_scalar(f"PerClass/Base/{cls}/AP50_90", entry['map@50:95'], epoch)
+                self.writer.add_scalar(f"PerClass/Base/{cls}/AP50", entry['map@50'], epoch)
+                self.writer.add_scalar(f"PerClass/Base/{cls}/Precision", entry['precision'], epoch)
+                self.writer.add_scalar(f"PerClass/Base/{cls}/Recall", entry['recall'], epoch)
+                self.writer.add_scalar(f"PerClass/Base/{cls}/F1", entry['f1_score'], epoch)
+
         if 'ema_test_coco_eval_bbox' in values:
             ema_coco_eval = values['ema_test_coco_eval_bbox']
             ema_ap50_90 = safe_index(ema_coco_eval, 0)
@@ -172,6 +187,21 @@ class MetricsTensorBoardSink:
                 self.writer.add_scalar("Metrics/EMA/AP50", ema_ap50, epoch)
             if ema_ar50_90 is not None:
                 self.writer.add_scalar("Metrics/EMA/AR50_90", ema_ar50_90, epoch)
+
+        if 'ema_test_results_json' in values:
+            rj = values['ema_test_results_json']
+            self.writer.add_scalar("Metrics/EMA/F1", rj['f1_score'], epoch)
+            self.writer.add_scalar("Metrics/EMA/Precision", rj['precision'], epoch)
+            self.writer.add_scalar("Metrics/EMA/Recall", rj['recall'], epoch)
+            for entry in rj['class_map']:
+                if entry['class'] == 'all':
+                    continue
+                cls = entry['class']
+                self.writer.add_scalar(f"PerClass/EMA/{cls}/AP50_90", entry['map@50:95'], epoch)
+                self.writer.add_scalar(f"PerClass/EMA/{cls}/AP50", entry['map@50'], epoch)
+                self.writer.add_scalar(f"PerClass/EMA/{cls}/Precision", entry['precision'], epoch)
+                self.writer.add_scalar(f"PerClass/EMA/{cls}/Recall", entry['recall'], epoch)
+                self.writer.add_scalar(f"PerClass/EMA/{cls}/F1", entry['f1_score'], epoch)
 
         self.writer.flush()
 
@@ -230,6 +260,21 @@ class MetricsWandBSink:
             if ar50_90 is not None:
                 log_dict["Metrics/Base/AR50_90"] = ar50_90
 
+        if 'test_results_json' in values:
+            rj = values['test_results_json']
+            log_dict["Metrics/Base/F1"] = rj['f1_score']
+            log_dict["Metrics/Base/Precision"] = rj['precision']
+            log_dict["Metrics/Base/Recall"] = rj['recall']
+            for entry in rj['class_map']:
+                if entry['class'] == 'all':
+                    continue
+                cls = entry['class']
+                log_dict[f"PerClass/Base/{cls}/AP50_90"] = entry['map@50:95']
+                log_dict[f"PerClass/Base/{cls}/AP50"] = entry['map@50']
+                log_dict[f"PerClass/Base/{cls}/Precision"] = entry['precision']
+                log_dict[f"PerClass/Base/{cls}/Recall"] = entry['recall']
+                log_dict[f"PerClass/Base/{cls}/F1"] = entry['f1_score']
+
         if 'ema_test_coco_eval_bbox' in values:
             ema_coco_eval = values['ema_test_coco_eval_bbox']
             ema_ap50_90 = safe_index(ema_coco_eval, 0)
@@ -241,6 +286,21 @@ class MetricsWandBSink:
                 log_dict["Metrics/EMA/AP50"] = ema_ap50
             if ema_ar50_90 is not None:
                 log_dict["Metrics/EMA/AR50_90"] = ema_ar50_90
+
+        if 'ema_test_results_json' in values:
+            rj = values['ema_test_results_json']
+            log_dict["Metrics/EMA/F1"] = rj['f1_score']
+            log_dict["Metrics/EMA/Precision"] = rj['precision']
+            log_dict["Metrics/EMA/Recall"] = rj['recall']
+            for entry in rj['class_map']:
+                if entry['class'] == 'all':
+                    continue
+                cls = entry['class']
+                log_dict[f"PerClass/EMA/{cls}/AP50_90"] = entry['map@50:95']
+                log_dict[f"PerClass/EMA/{cls}/AP50"] = entry['map@50']
+                log_dict[f"PerClass/EMA/{cls}/Precision"] = entry['precision']
+                log_dict[f"PerClass/EMA/{cls}/Recall"] = entry['recall']
+                log_dict[f"PerClass/EMA/{cls}/F1"] = entry['f1_score']
 
         wandb.log(log_dict)
 
