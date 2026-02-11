@@ -265,6 +265,8 @@ class TrainConfig(BaseModel):
     multi_scale: bool = True
     expanded_scales: bool = True
     do_random_resize_via_padding: bool = False
+    # Add horizontal_flip to the training config to control whether to apply horizontal flip augmentation during training. Default is True.
+    horizontal_flip: bool = True
     use_ema: bool = True
     num_workers: int = 2
     weight_decay: float = 1e-4

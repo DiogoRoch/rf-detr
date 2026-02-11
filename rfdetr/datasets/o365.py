@@ -28,11 +28,12 @@ def build_o365_raw(image_set: str, args: Any, resolution: int) -> CocoDetection:
 
 
     square_resize_div_64 = getattr(args, 'square_resize_div_64', False)
+    horizontal_flip = getattr(args, "horizontal_flip", True)
 
     if square_resize_div_64:
-        dataset = CocoDetection(img_folder, ann_file, transforms=make_coco_transforms_square_div_64(image_set, resolution, multi_scale=args.multi_scale, expanded_scales=args.expanded_scales))
+        dataset = CocoDetection(img_folder, ann_file, transforms=make_coco_transforms_square_div_64(image_set, resolution, multi_scale=args.multi_scale, expanded_scales=args.expanded_scales, horizontal_flip=horizontal_flip))
     else:
-        dataset = CocoDetection(img_folder, ann_file, transforms=make_coco_transforms(image_set, resolution, multi_scale=args.multi_scale, expanded_scales=args.expanded_scales))
+        dataset = CocoDetection(img_folder, ann_file, transforms=make_coco_transforms(image_set, resolution, multi_scale=args.multi_scale, expanded_scales=args.expanded_scales, horizontal_flip=horizontal_flip))
     return dataset
 
 
