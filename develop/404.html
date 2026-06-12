@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="SOTA Real-Time Object Detection Model">
+        <meta name="description" content="Real-time transformer for object detection and instance segmentation. DINOv2 backbone, SOTA on COCO (60.1 AP50:95). Apache 2.0. Works with Python ≥3.10.">
       
       
         <meta name="author" content="Roboflow">
@@ -18,16 +18,20 @@
         
       
       
-      <link rel="icon" href="/rf-detr/develop/assets/roboflow-logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <link rel="icon" href="/develop/assets/roboflow-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
+    
+  
     
       
         <title>RF-DETR</title>
       
     
+  
+
     
-      <link rel="stylesheet" href="/rf-detr/develop/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="/develop/assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -46,16 +50,21 @@
       
     
     
-      <link rel="stylesheet" href="/rf-detr/develop/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="/develop/assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="/rf-detr/develop/stylesheets/rf.css">
+      <link rel="stylesheet" href="/develop/stylesheets/rf.css">
     
-    <script>__md_scope=new URL("/rf-detr/develop",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("/develop",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
+  
+  <link rel="preconnect" href="https://storage.googleapis.com">
+
+  
+
   </head>
   
   
@@ -91,14 +100,14 @@
 
     <!-- Link to home -->
     <a
-      href="/rf-detr/develop/."
+      href="/develop/."
       title="RF-DETR"
       class="md-header__button md-logo"
       aria-label="RF-DETR"
       data-md-component="logo"
     >
       
-  <img src="/rf-detr/develop/assets/roboflow-logo.svg" alt="logo">
+  <img src="/develop/assets/roboflow-logo.svg" alt="logo">
 
     </a>
 
@@ -119,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis" style="display: flex; align-items: center; gap: 0.5rem;">
             <a
-            href="/rf-detr/develop/."
+            href="/develop/."
             title="RF-DETR"
             class="md-header__button md-logo"
             aria-label="RF-DETR"
@@ -127,7 +136,7 @@
             id="item-logo"
             >
             
-  <img src="/rf-detr/develop/assets/roboflow-logo.svg" alt="logo">
+  <img src="/develop/assets/roboflow-logo.svg" alt="logo">
 
             </a>
             
@@ -203,7 +212,7 @@
                 <li><a href="https://inference.roboflow.com">Inference</a></li>
                 <li><a href="https://supervision.roboflow.com">Supervision</a></li>
                 <li><a href="https://trackers.roboflow.com">Trackers</a></li>
-                <li><a href="https://rf-detr.roboflow.com">RF-DETR</a></li>
+                <li><a href="https://rfdetr.roboflow.com">RF-DETR</a></li>
                 <li><a href="https://maestro.roboflow.com">Maestro</a></li>
                 <li><a href="https://docs.roboflow.com">Roboflow</a></li>
             </ul>
@@ -297,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/rf-detr/develop/." class="md-tabs__link">
+      <a href="/develop/." class="md-tabs__link">
         
   
   
@@ -318,11 +327,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="/rf-detr/develop/learn/install/" class="md-tabs__link">
+        <a href="/develop/getting-started/install/" class="md-tabs__link">
           
   
   
-  How to
+  Getting Started
 
         </a>
       </li>
@@ -337,8 +346,38 @@
   
     
     
+      
+  
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
-        <a href="/rf-detr/develop/reference/rfdetr/" class="md-tabs__link">
+        <a href="/develop/learn/run/detection/" class="md-tabs__link">
+          
+  
+  
+  How to
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="/develop/reference/rfdetr/" class="md-tabs__link">
           
   
   
@@ -356,7 +395,45 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/roboflow/rf-detr/releases" class="md-tabs__link">
+      <a href="/develop/cookbooks/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cookbooks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/develop/resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="/develop/changelog/" class="md-tabs__link">
         
   
   
@@ -397,9 +474,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/rf-detr/develop/." title="RF-DETR" class="md-nav__button md-logo" aria-label="RF-DETR" data-md-component="logo">
+    <a href="/develop/." title="RF-DETR" class="md-nav__button md-logo" aria-label="RF-DETR" data-md-component="logo">
       
-  <img src="/rf-detr/develop/assets/roboflow-logo.svg" alt="logo">
+  <img src="/develop/assets/roboflow-logo.svg" alt="logo">
 
     </a>
     RF-DETR
@@ -426,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/." class="md-nav__link">
+      <a href="/develop/." class="md-nav__link">
         
   
   
@@ -476,7 +553,7 @@
   <span class="md-ellipsis">
     
   
-    How to
+    Getting Started
   
 
     
@@ -492,7 +569,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    How to
+    Getting Started
   
 
           </label>
@@ -505,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/install/" class="md-nav__link">
+      <a href="/develop/getting-started/install/" class="md-nav__link">
         
   
   
@@ -532,359 +609,15 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Run Model
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Run Model
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/run/detection/" class="md-nav__link">
+      <a href="/develop/getting-started/migration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Detection
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/run/segmentation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Segmentation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Train Model
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Train Model
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/train/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/train/dataset-formats/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dataset Formats
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/train/training-parameters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Training Parameters
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/train/advanced/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced Training
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Export Model
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/deploy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploy Model
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/learn/benchmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Benchmarks
+    Migration Guide
   
 
     
@@ -935,7 +668,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    How to
   
 
     
@@ -948,6 +681,549 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Model
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Run Model
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/run/detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/run/segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/pretrained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pretrained Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Train Model
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Train Model
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/dataset-formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataset Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/training-parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Training API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/augmentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Augmentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/train/loggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Loggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/learn/benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -964,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/rfdetr/" class="md-nav__link">
+      <a href="/develop/reference/rfdetr/" class="md-nav__link">
         
   
   
@@ -1005,10 +1281,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
@@ -1026,8 +1302,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1044,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/nano/" class="md-nav__link">
+      <a href="/develop/reference/nano/" class="md-nav__link">
         
   
   
@@ -1072,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/small/" class="md-nav__link">
+      <a href="/develop/reference/small/" class="md-nav__link">
         
   
   
@@ -1100,35 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/base/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RF-DETR Base (Deprecated)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/medium/" class="md-nav__link">
+      <a href="/develop/reference/medium/" class="md-nav__link">
         
   
   
@@ -1156,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/large/" class="md-nav__link">
+      <a href="/develop/reference/large/" class="md-nav__link">
         
   
   
@@ -1184,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/xlarge/" class="md-nav__link">
+      <a href="/develop/reference/xlarge/" class="md-nav__link">
         
   
   
@@ -1212,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/2xlarge/" class="md-nav__link">
+      <a href="/develop/reference/2xlarge/" class="md-nav__link">
         
   
   
@@ -1220,34 +1468,6 @@
     
   
     RF-DETR 2XLarge
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/large_deprecated/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RF-DETR Large (Deprecated)
   
 
     
@@ -1289,10 +1509,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
@@ -1310,8 +1530,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1328,7 +1548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_nano/" class="md-nav__link">
+      <a href="/develop/reference/seg_nano/" class="md-nav__link">
         
   
   
@@ -1356,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_small/" class="md-nav__link">
+      <a href="/develop/reference/seg_small/" class="md-nav__link">
         
   
   
@@ -1384,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_medium/" class="md-nav__link">
+      <a href="/develop/reference/seg_medium/" class="md-nav__link">
         
   
   
@@ -1412,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_large/" class="md-nav__link">
+      <a href="/develop/reference/seg_large/" class="md-nav__link">
         
   
   
@@ -1440,7 +1660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_xlarge/" class="md-nav__link">
+      <a href="/develop/reference/seg_xlarge/" class="md-nav__link">
         
   
   
@@ -1468,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_2xlarge/" class="md-nav__link">
+      <a href="/develop/reference/seg_2xlarge/" class="md-nav__link">
         
   
   
@@ -1476,34 +1696,6 @@
     
   
     RF-DETR Seg 2XLarge
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/seg_preview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RF-DETR Seg Preview (Deprecated)
   
 
     
@@ -1545,10 +1737,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
@@ -1566,8 +1758,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1584,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/train_config/" class="md-nav__link">
+      <a href="/develop/reference/train_config/" class="md-nav__link">
         
   
   
@@ -1612,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/rf-detr/develop/reference/segmentation_train_config/" class="md-nav__link">
+      <a href="/develop/reference/segmentation_train_config/" class="md-nav__link">
         
   
   
@@ -1641,6 +1833,94 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lightning Training
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lightning Training
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/reference/training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Primitives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1655,7 +1935,61 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/roboflow/rf-detr/releases" class="md-nav__link">
+      <a href="/develop/cookbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookbooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/develop/changelog/" class="md-nav__link">
         
   
   
@@ -1724,7 +2058,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Roboflow 2025. All rights reserved.
+      Roboflow 2025–2026. All rights reserved.
     </div>
   
   
@@ -1797,10 +2131,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/rf-detr/develop", "features": ["content.tabs.link", "content.code.copy", "navigation.expand", "navigation.tabs", "content.code.annotate", "navigation.tracking", "content.tooltips", "navigation.tabs.sticky"], "search": "/rf-detr/develop/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "/develop", "features": ["content.tabs.link", "content.code.copy", "navigation.expand", "navigation.tabs", "content.code.annotate", "navigation.tracking", "content.tooltips", "navigation.tabs.sticky"], "search": "/develop/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="/rf-detr/develop/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="/develop/assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

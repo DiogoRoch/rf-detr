@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="SOTA Real-Time Object Detection Model">
+        <meta name="description" content="Complete RF-DETR training parameter reference. Learning rate, batch size, EMA, early stopping, resolution, and hardware configuration.">
       
       
         <meta name="author" content="Roboflow">
       
       
-        <link rel="canonical" href="https://roboflow.github.io/rf-detr/develop/learn/train/training-parameters/">
+        <link rel="canonical" href="https://rfdetr.roboflow.com/develop/learn/train/training-parameters/">
       
       
         <link rel="prev" href="../dataset-formats/">
@@ -25,13 +25,17 @@
       
       
       <link rel="icon" href="../../../assets/roboflow-logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
+    
+  
     
       
         <title>Training Parameters - RF-DETR</title>
       
     
+  
+
     
       <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
@@ -62,6 +66,88 @@
 
     
     
+  
+  <link rel="preconnect" href="https://storage.googleapis.com">
+
+  
+  
+  
+  <meta property="og:title" content="Training Parameters - RF-DETR">
+  <meta property="og:description" content="Complete RF-DETR training parameter reference. Learning rate, batch size, EMA, early stopping, resolution, and hardware configuration.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rfdetr.roboflow.com/develop/learn/train/training-parameters/">
+  <meta property="og:image" content="https://storage.googleapis.com/com-roboflow-marketing/rf-detr/rf_detr_1-4_latency_accuracy_object_detection.png">
+  <meta property="og:image:width" content="840">
+  <meta property="og:image:height" content="630">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@roboflow">
+  <meta name="twitter:title" content="Training Parameters - RF-DETR">
+  <meta name="twitter:description" content="Complete RF-DETR training parameter reference. Learning rate, batch size, EMA, early stopping, resolution, and hardware configuration.">
+  <meta name="twitter:image" content="https://storage.googleapis.com/com-roboflow-marketing/rf-detr/rf_detr_1-4_latency_accuracy_object_detection.png">
+
+  
+  
+  
+  
+  <meta property="article:modified_time" content="2026-06-12T11:18:47">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Training Parameters",
+    "description": "Complete RF-DETR training parameter reference. Learning rate, batch size, EMA, early stopping, resolution, and hardware configuration.",
+    "url": "https://rfdetr.roboflow.com/develop/learn/train/training-parameters/",
+    "isPartOf": {"@id": "https://rfdetr.roboflow.com/develop#website"},
+    "about": {"@id": "https://rfdetr.roboflow.com/develop#software"},
+    "proficiencyLevel": "Beginner to advanced",
+    "inLanguage": "en",
+    "keywords": "RF-DETR, rfdetr, object detection, instance segmentation, computer vision, Roboflow",
+    "datePublished": "2025-03-01",
+    "dateModified": "2026-06-12T11:18:47",
+    "image": "https://storage.googleapis.com/com-roboflow-marketing/rf-detr/rf_detr_1-4_latency_accuracy_object_detection.png",
+    "author": {"@type": "Organization", "name": "Roboflow", "url": "https://roboflow.com"},
+    "publisher": {"@type": "Organization", "name": "Roboflow", "url": "https://roboflow.com"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rfdetr.roboflow.com/develop/learn/train/training-parameters/"},
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".md-content h1", ".md-typeset > p:first-child"]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "RF-DETR",
+        "item": "https://rfdetr.roboflow.com/develop"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Train Model",
+        "item": "https://rfdetr.roboflow.com/develop/learn/train/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Training Parameters",
+        "item": "https://rfdetr.roboflow.com/develop/learn/train/training-parameters/"
+      }
+      
+    ]
+  }
+  </script>
+  
+  
+
   </head>
   
   
@@ -214,7 +300,7 @@
                 <li><a href="https://inference.roboflow.com">Inference</a></li>
                 <li><a href="https://supervision.roboflow.com">Supervision</a></li>
                 <li><a href="https://trackers.roboflow.com">Trackers</a></li>
-                <li><a href="https://rf-detr.roboflow.com">RF-DETR</a></li>
+                <li><a href="https://rfdetr.roboflow.com">RF-DETR</a></li>
                 <li><a href="https://maestro.roboflow.com">Maestro</a></li>
                 <li><a href="https://docs.roboflow.com">Roboflow</a></li>
             </ul>
@@ -325,13 +411,42 @@
   
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/install/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
     
   
   
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../install/" class="md-tabs__link">
+        <a href="../../run/detection/" class="md-tabs__link">
           
   
   
@@ -339,6 +454,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -369,7 +487,45 @@
   
   
     <li class="md-tabs__item">
-      <a href="https://github.com/roboflow/rf-detr/releases" class="md-tabs__link">
+      <a href="../../../cookbooks/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cookbooks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../changelog/" class="md-tabs__link">
         
   
   
@@ -463,36 +619,33 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    How to
+    Getting Started
   
 
     
@@ -503,12 +656,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    How to
+    Getting Started
   
 
           </label>
@@ -521,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install/" class="md-nav__link">
+      <a href="../../../getting-started/install/" class="md-nav__link">
         
   
   
@@ -548,6 +701,96 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../getting-started/migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -562,10 +805,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
   
@@ -583,8 +826,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -650,6 +893,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pretrained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pretrained Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -678,10 +949,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
@@ -699,8 +970,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1011,6 +1282,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#evaluation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keypoint-preview-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keypoint Preview Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduler-and-regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler and Regularization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-and-accelerator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime and Accelerator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataloader-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataLoader Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#complete-parameter-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1045,6 +1388,90 @@
     
   
     Advanced Training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Training API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../augmentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Augmentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Loggers
   
 
     
@@ -1177,10 +1604,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -1198,8 +1625,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1257,10 +1684,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
@@ -1278,8 +1705,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1332,34 +1759,6 @@
     
   
     RF-DETR Small
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../reference/base/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RF-DETR Base (Deprecated)
   
 
     
@@ -1485,34 +1884,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../reference/large_deprecated/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RF-DETR Large (Deprecated)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1541,10 +1912,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
@@ -1562,8 +1933,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1741,34 +2112,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../reference/seg_preview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RF-DETR Seg Preview (Deprecated)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1797,10 +2140,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
@@ -1818,8 +2161,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1893,6 +2236,94 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lightning Training
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lightning Training
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training Primitives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1907,7 +2338,61 @@
   
   
     <li class="md-nav__item">
-      <a href="https://github.com/roboflow/rf-detr/releases" class="md-nav__link">
+      <a href="../../../cookbooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookbooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
         
   
   
@@ -2132,6 +2617,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#evaluation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keypoint-preview-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keypoint Preview Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduler-and-regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduler and Regularization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-and-accelerator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime and Accelerator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataloader-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataLoader Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#complete-parameter-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2323,42 +2880,16 @@
 <td><code>resolution</code></td>
 <td><code>int</code></td>
 <td>Model-dependent</td>
-<td>Input image resolution. Higher values can improve accuracy but require more memory. <strong>Must be divisible by 56.</strong></td>
+<td>Input image resolution. Higher values can improve accuracy but require more memory. Each model has its own valid block size: current standard detection checkpoints use multiples of 32, current segmentation checkpoints use multiples of 24 (most variants) or 12 (<code>RFDETRSegNano</code>), and the definitive rule is that the resolution must be divisible by <code>patch_size * num_windows</code> for the selected model.</td>
 </tr>
 </tbody>
 </table>
-<p>Common resolution values:</p>
-<table>
-<thead>
-<tr>
-<th>Resolution</th>
-<th>Memory Usage</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>560</td>
-<td>Low</td>
-<td>Small objects, limited GPU memory</td>
-</tr>
-<tr>
-<td>672</td>
-<td>Medium</td>
-<td>Balanced (default for many models)</td>
-</tr>
-<tr>
-<td>784</td>
-<td>High</td>
-<td>High accuracy requirements</td>
-</tr>
-<tr>
-<td>896</td>
-<td>Very High</td>
-<td>Maximum quality (requires large GPU)</td>
-</tr>
-</tbody>
-</table>
+<p>Common resolution values for currently documented checkpoints:</p>
+<ul>
+<li>Detection: <code>384</code>, <code>512</code>, <code>576</code>, <code>704</code></li>
+<li>Segmentation: <code>312</code>, <code>384</code>, <code>432</code>, <code>504</code>, <code>624</code>, <code>768</code></li>
+</ul>
+<p>For example, <code>RFDETRSegXLarge</code> uses <code>624x624</code>, which is valid because <code>624</code> is divisible by <code>24</code>.</p>
 <h2 id="regularization-parameters">Regularization Parameters<a class="headerlink" href="#regularization-parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2443,6 +2974,12 @@
 <td><code>10</code></td>
 <td>Frequency (in epochs) at which model checkpoints are saved. More frequent saves provide better coverage but consume more storage.</td>
 </tr>
+<tr>
+<td><code>skip_best_epochs</code></td>
+<td><code>int</code></td>
+<td><code>0</code></td>
+<td>Ignore the first N epochs when tracking best checkpoints and early-stopping patience. Useful when fine-tuning from a prior checkpoint.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="checkpoint-files">Checkpoint Files<a class="headerlink" href="#checkpoint-files" title="Permanent link">&para;</a></h3>
@@ -2477,6 +3014,8 @@
 </tr>
 </tbody>
 </table>
+<p>Best validation performance uses the task metric for the model family: box mAP for detection/segmentation and COCO
+keypoint AP for keypoint preview.</p>
 <h2 id="early-stopping-parameters">Early Stopping Parameters<a class="headerlink" href="#early-stopping-parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2492,7 +3031,7 @@
 <td><code>early_stopping</code></td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
-<td>Enable early stopping based on validation mAP.</td>
+<td>Enable early stopping based on the validation task metric.</td>
 </tr>
 <tr>
 <td><code>early_stopping_patience</code></td>
@@ -2504,13 +3043,19 @@
 <td><code>early_stopping_min_delta</code></td>
 <td><code>float</code></td>
 <td><code>0.001</code></td>
-<td>Minimum change in mAP to qualify as an improvement.</td>
+<td>Minimum metric change to qualify as an improvement.</td>
 </tr>
 <tr>
 <td><code>early_stopping_use_ema</code></td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
 <td>Whether to track improvements using EMA model metrics.</td>
+</tr>
+<tr>
+<td><code>skip_best_epochs</code></td>
+<td><code>int</code></td>
+<td><code>0</code></td>
+<td>Ignore the first N epochs (0..N-1) for best-model selection and early-stopping patience.</td>
 </tr>
 </tbody>
 </table>
@@ -2522,13 +3067,22 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">early_stopping</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">early_stopping_patience</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">early_stopping_min_delta</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">skip_best_epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>This configuration will:</p>
 <ul>
 <li>Train for up to 200 epochs</li>
-<li>Stop early if mAP doesn't improve by at least 0.005 for 15 consecutive epochs</li>
+<li>Ignore epochs 0-2 for best-checkpoint tracking and patience counting</li>
+<li>Stop early if the validation metric doesn't improve by at least 0.005 for 15 consecutive epochs</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Transfer learning with <code>pretrain_weights</code></p>
+<p>When fine-tuning from <code>pretrain_weights</code>, the pretrained model's epoch-0 validation metric can be artificially high
+relative to the training trajectory on the new dataset. This causes <code>checkpoint_best_total.pth</code> to always contain
+the untrained pretrained weights and may trigger early stopping prematurely. Use <code>skip_best_epochs</code> to defer
+best-checkpoint selection and patience counting until the model has had time to adapt.</p>
+</div>
 <h2 id="logging-parameters">Logging Parameters<a class="headerlink" href="#logging-parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2544,13 +3098,13 @@
 <td><code>tensorboard</code></td>
 <td><code>bool</code></td>
 <td><code>True</code></td>
-<td>Enable TensorBoard logging. Requires <code>pip install "rfdetr[metrics]"</code>.</td>
+<td>Enable TensorBoard logging. Requires <code>pip install "rfdetr[loggers]"</code>. If the <code>tensorboard</code> package is not installed, training continues with a <code>UserWarning</code> and TensorBoard output is silently suppressed.</td>
 </tr>
 <tr>
 <td><code>wandb</code></td>
 <td><code>bool</code></td>
 <td><code>False</code></td>
-<td>Enable Weights &amp; Biases logging. Requires <code>pip install "rfdetr[metrics]"</code>.</td>
+<td>Enable Weights &amp; Biases logging. Requires <code>pip install "rfdetr[loggers]"</code>.</td>
 </tr>
 <tr>
 <td><code>project</code></td>
@@ -2576,6 +3130,216 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">run</span><span class="o">=</span><span class="s2">&quot;experiment-001&quot;</span><span class="p">,</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">)</span>
 </span></code></pre></div>
+<h2 id="evaluation-parameters">Evaluation Parameters<a class="headerlink" href="#evaluation-parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eval_max_dets</code></td>
+<td><code>int</code></td>
+<td><code>500</code></td>
+<td>Maximum number of detections per image considered during COCO evaluation. Lower values speed up evaluation.</td>
+</tr>
+<tr>
+<td><code>eval_interval</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>Run COCO evaluation every N epochs. Set to a higher value to reduce evaluation overhead during long training runs.</td>
+</tr>
+<tr>
+<td><code>log_per_class_metrics</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Log per-class AP metrics to the console and loggers. Disable to reduce log verbosity when there are many classes.</td>
+</tr>
+<tr>
+<td><code>progress_bar</code></td>
+<td>str | bool | None</td>
+<td><code>None</code></td>
+<td>Progress bar style: <code>"tqdm"</code>, <code>"rich"</code>, or <code>None</code>. Legacy booleans are still accepted.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="keypoint-preview-parameters">Keypoint Preview Parameters<a class="headerlink" href="#keypoint-preview-parameters" title="Permanent link">&para;</a></h2>
+<p>These parameters apply when training <code>RFDETRKeypointPreview</code> on COCO keypoint annotations.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_keypoints_per_class</code></td>
+<td><code>list[int]</code></td>
+<td><code>[0, 17]</code></td>
+<td>Keypoint schema by model label slot. A zero entry marks a detection-only class slot.</td>
+</tr>
+<tr>
+<td><code>keypoint_flip_pairs</code></td>
+<td><code>list[int]</code></td>
+<td><code>[]</code></td>
+<td>Flat left/right keypoint index pairs used to swap joints after horizontal-flip augmentation.</td>
+</tr>
+<tr>
+<td><code>keypoint_l1_loss_coef</code></td>
+<td><code>float</code></td>
+<td><code>1.0</code></td>
+<td>Weight for keypoint coordinate L1 loss in keypoint preview training.</td>
+</tr>
+<tr>
+<td><code>keypoint_findable_loss_coef</code></td>
+<td><code>float</code></td>
+<td><code>1.0</code></td>
+<td>Weight for keypoint findable/objectness loss.</td>
+</tr>
+<tr>
+<td><code>keypoint_visible_loss_coef</code></td>
+<td><code>float</code></td>
+<td><code>1.0</code></td>
+<td>Weight for keypoint visibility loss.</td>
+</tr>
+<tr>
+<td><code>keypoint_nll_loss_coef</code></td>
+<td><code>float</code></td>
+<td><code>1.0</code></td>
+<td>Weight for keypoint negative-log-likelihood loss.</td>
+</tr>
+<tr>
+<td><code>keypoint_oks_sigmas</code></td>
+<td><code>list[float] \| None</code></td>
+<td><code>None</code></td>
+<td>Per-keypoint OKS sigma values used for COCO AP evaluation. When <code>None</code>, falls back to the sigma values declared in the keypoint schema (default 0.1 per keypoint). Set to COCO official per-keypoint sigmas for comparable benchmarks.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">OKS sigma values: flat vs per-keypoint</p>
+<p>The default <code>infer_coco_keypoint_schema</code> uses a flat sigma of 0.1 for all keypoints. COCO's official per-keypoint sigmas range from 0.025 (eyes) to 0.107 (hips). Flat 0.1 over-penalizes tight keypoints and under-penalizes loose ones, producing AP numbers not directly comparable to official COCO benchmarks. Use <code>keypoint_oks_sigmas</code> with the official COCO values when reporting benchmark numbers.</p>
+</div>
+<h2 id="advanced-parameters">Advanced Parameters<a class="headerlink" href="#advanced-parameters" title="Permanent link">&para;</a></h2>
+<p>The parameters below are available for fine-grained control over training behaviour. Most users can leave these at their defaults.</p>
+<h3 id="scheduler-and-regularization">Scheduler and Regularization<a class="headerlink" href="#scheduler-and-regularization" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lr_scheduler</code></td>
+<td><code>str</code></td>
+<td><code>"step"</code></td>
+<td>Learning rate scheduler type. Options: <code>"step"</code> (step decay at <code>lr_drop</code>) or <code>"cosine"</code> (cosine annealing).</td>
+</tr>
+<tr>
+<td><code>lr_min_factor</code></td>
+<td><code>float</code></td>
+<td><code>0.0</code></td>
+<td>Floor for the cosine scheduler, expressed as a fraction of the initial LR. Ignored when using <code>"step"</code>.</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td><code>float</code></td>
+<td><code>0.0</code></td>
+<td>Number of epochs for linear learning rate warmup at the start of training.</td>
+</tr>
+<tr>
+<td><code>drop_path</code></td>
+<td><code>float</code></td>
+<td><code>0.0</code></td>
+<td>Stochastic depth drop-path rate applied to the backbone. Higher values add more regularization.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="runtime-and-accelerator">Runtime and Accelerator<a class="headerlink" href="#runtime-and-accelerator" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accelerator</code></td>
+<td><code>str</code></td>
+<td><code>"auto"</code></td>
+<td>PyTorch Lightning accelerator selection. <code>"auto"</code> picks GPU if available, then MPS, then CPU.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td><code>int</code></td>
+<td><code>None</code></td>
+<td>Global random seed for reproducibility. <code>None</code> means no fixed seed is set.</td>
+</tr>
+<tr>
+<td><code>fp16_eval</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Run evaluation passes in FP16 precision. Reduces memory usage but may lower numerical precision.</td>
+</tr>
+<tr>
+<td><code>compute_val_loss</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Compute and log the detection loss on the validation set each epoch.</td>
+</tr>
+<tr>
+<td><code>compute_test_loss</code></td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Compute and log the detection loss during the final test run.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataloader-tuning">DataLoader Tuning<a class="headerlink" href="#dataloader-tuning" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pin_memory</code></td>
+<td><code>bool</code></td>
+<td><code>None</code></td>
+<td>Pin host memory in the DataLoader for faster GPU transfers. <code>None</code> defers to PyTorch Lightning's default.</td>
+</tr>
+<tr>
+<td><code>persistent_workers</code></td>
+<td><code>bool</code></td>
+<td><code>None</code></td>
+<td>Keep DataLoader worker processes alive between epochs. <code>None</code> defers to PyTorch Lightning's default.</td>
+</tr>
+<tr>
+<td><code>prefetch_factor</code></td>
+<td><code>int</code></td>
+<td><code>None</code></td>
+<td>Number of batches to prefetch per DataLoader worker. <code>None</code> uses PyTorch's built-in default.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="complete-parameter-reference">Complete Parameter Reference<a class="headerlink" href="#complete-parameter-reference" title="Permanent link">&para;</a></h2>
 <p>Below is a summary table of all training parameters:</p>
 <table>
@@ -2634,7 +3398,7 @@
 <td><code>resolution</code></td>
 <td>int</td>
 <td>Model-specific</td>
-<td>Input image size (must be divisible by 56).</td>
+<td>Input image size (must be divisible by the selected model's <code>patch_size * num_windows</code>).</td>
 </tr>
 <tr>
 <td><code>weight_decay</code></td>
@@ -2712,13 +3476,109 @@
 <td><code>early_stopping_min_delta</code></td>
 <td>float</td>
 <td>0.001</td>
-<td>Minimum mAP change to qualify as improvement.</td>
+<td>Minimum validation metric change to qualify as improvement.</td>
 </tr>
 <tr>
 <td><code>early_stopping_use_ema</code></td>
 <td>bool</td>
 <td>False</td>
 <td>Use EMA model for early stopping metrics.</td>
+</tr>
+<tr>
+<td><code>eval_max_dets</code></td>
+<td>int</td>
+<td>500</td>
+<td>Maximum detections per image considered during COCO evaluation.</td>
+</tr>
+<tr>
+<td><code>eval_interval</code></td>
+<td>int</td>
+<td>1</td>
+<td>Run COCO evaluation every N epochs.</td>
+</tr>
+<tr>
+<td><code>log_per_class_metrics</code></td>
+<td>bool</td>
+<td>True</td>
+<td>Log per-class AP metrics to the console and loggers.</td>
+</tr>
+<tr>
+<td><code>progress_bar</code></td>
+<td>str | bool | None</td>
+<td>None</td>
+<td>Progress bar style: <code>"tqdm"</code>, <code>"rich"</code>, or <code>None</code>. Legacy booleans are still accepted.</td>
+</tr>
+<tr>
+<td><code>accelerator</code></td>
+<td>str</td>
+<td>"auto"</td>
+<td>PyTorch Lightning accelerator. "auto" selects GPU/MPS/CPU automatically.</td>
+</tr>
+<tr>
+<td><code>seed</code></td>
+<td>int</td>
+<td>None</td>
+<td>Random seed for reproducibility. None means no fixed seed.</td>
+</tr>
+<tr>
+<td><code>lr_scheduler</code></td>
+<td>str</td>
+<td>"step"</td>
+<td>Learning rate scheduler type: "step" or "cosine".</td>
+</tr>
+<tr>
+<td><code>lr_min_factor</code></td>
+<td>float</td>
+<td>0.0</td>
+<td>Minimum LR as a fraction of the initial LR (cosine scheduler floor).</td>
+</tr>
+<tr>
+<td><code>warmup_epochs</code></td>
+<td>float</td>
+<td>0.0</td>
+<td>Number of linear warmup epochs at the start of training.</td>
+</tr>
+<tr>
+<td><code>drop_path</code></td>
+<td>float</td>
+<td>0.0</td>
+<td>Stochastic depth drop-path rate for the backbone.</td>
+</tr>
+<tr>
+<td><code>compute_val_loss</code></td>
+<td>bool</td>
+<td>True</td>
+<td>Compute and log loss during validation.</td>
+</tr>
+<tr>
+<td><code>compute_test_loss</code></td>
+<td>bool</td>
+<td>True</td>
+<td>Compute and log loss during the test run.</td>
+</tr>
+<tr>
+<td><code>fp16_eval</code></td>
+<td>bool</td>
+<td>False</td>
+<td>Run evaluation in FP16 precision to reduce memory usage.</td>
+</tr>
+<tr>
+<td><code>pin_memory</code></td>
+<td>bool</td>
+<td>None</td>
+<td>Pin DataLoader memory. None defers to PyTorch Lightning's default.</td>
+</tr>
+<tr>
+<td><code>persistent_workers</code></td>
+<td>bool</td>
+<td>None</td>
+<td>Keep DataLoader workers alive between epochs. None uses PTL default.</td>
+</tr>
+<tr>
+<td><code>prefetch_factor</code></td>
+<td>int</td>
+<td>None</td>
+<td>Number of batches prefetched per worker. None uses PyTorch default.</td>
 </tr>
 </tbody>
 </table>
@@ -2729,6 +3589,27 @@
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="June 12, 2026 11:18:47 UTC">2026-06-12 11:18:47</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 
@@ -2753,7 +3634,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Roboflow 2025. All rights reserved.
+      Roboflow 2025–2026. All rights reserved.
     </div>
   
   
